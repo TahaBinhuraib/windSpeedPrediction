@@ -51,6 +51,12 @@ def windVelocity(p , numberOfTurbines,cp,rho,swept):
     v = v**(1./3)
     v = v
     return v
+for city in cities:
+    
+    for i,k in globals()[city].iterrows():
+        
+        globals()[city+'Results'].append(windVelocity(k['Toplam (MWh)'] , globals()[city+'_'][1],cp,rho,globals()[city+'_'][0]))
+        
 
 cp = 0.4
 rho = 1.24
